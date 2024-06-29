@@ -1,0 +1,17 @@
+.spinner {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 12px solid #222324;
+  border-right: 10px solid transparent;
+  animation: circleRound 0.8s infinite ease-in;
+  margin: 50px auto;
+}
+@keyframes circleRound {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
