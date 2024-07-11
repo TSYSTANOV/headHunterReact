@@ -1,5 +1,6 @@
 import { useModal } from "../../context/ModalApp";
 import { useQueryParams } from "../../context/SearchParamsApp";
+import { Search } from "../Search/Search";
 
 function Header() {
   const { params } = useQueryParams();
@@ -57,18 +58,7 @@ function Header() {
       </div>
       <div className="header__bottom bottom">
         <div className="container">
-          <form className="bottom__search">
-            <div className="bottom__search-wrapper">
-              <input className="bottom__input" type="search" name="search" />
-              <button
-                className="bottom__advanced-options"
-                type="button"
-              ></button>
-            </div>
-            <button className="bottom__btn" type="submit">
-              Найти
-            </button>
-          </form>
+          <Search />
 
           <nav className="bottom__navigation navigation">
             <ul className="navigation__list">

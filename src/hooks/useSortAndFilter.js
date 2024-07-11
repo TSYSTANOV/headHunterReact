@@ -18,7 +18,18 @@ export const useSortAndFilter = (dataArray) => {
     const dateCheck = params.periodValue
       ? dateCalculate(item.date, params.periodValue)
       : true;
-    return salaryCheck && experienceCheck && employmentCheck && dateCheck;
+    const searchCheck = params.searchValue
+      ? item.title
+          .toLowerCase()
+          .includes(params.searchValue.toLowerCase().trim())
+      : true;
+    return (
+      salaryCheck &&
+      experienceCheck &&
+      employmentCheck &&
+      dateCheck &&
+      searchCheck
+    );
   });
   const sortedData = params.orderValue
     ? [...filteredData].sort((a, b) => {

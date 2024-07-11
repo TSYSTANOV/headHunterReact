@@ -1,9 +1,17 @@
-import { createContext, useContext, useEffect, useMemo, useRef } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useSearchParams } from "react-router-dom";
 
 const SearchParams = createContext({});
 
 export const SearchParamsApp = ({ children }) => {
+  const [searchLength, setSearchLength] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const paramsRef = useRef();
   const params = useMemo(() => {
@@ -46,7 +54,15 @@ export const SearchParamsApp = ({ children }) => {
   };
 
   return (
-    <SearchParams.Provider value={{ params, addParamsByRegion, addParams }}>
+    <SearchParams.Provider
+      value={{
+        params,
+        addParamsByRegion,
+        addParams,
+        searchLength,
+        setSearchLength,
+      }}
+    >
       {children}
     </SearchParams.Provider>
   );

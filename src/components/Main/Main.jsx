@@ -1,6 +1,7 @@
 import { FilterParams } from "../Filter/FilterParams";
 import ListOfResults from "../ListOfResults/ListOfResults";
 import { ModalVacancy } from "../ModalVacancy/ModalVacancy";
+import { FoundInfo } from "../Search/FoundInfo";
 import { SortParams } from "../Sort/SortParams";
 
 function Main() {
@@ -8,11 +9,7 @@ function Main() {
     <>
       <main className="main">
         <div className="container">
-          <h1 className="found">
-            38 вакансий &laquo;
-            <span className="found__item">Junior Frontend</span>
-            &raquo;
-          </h1>
+          <FoundInfo />
           <SortParams />
           <div className="wrapper">
             <FilterParams />
